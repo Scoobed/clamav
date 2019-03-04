@@ -18,19 +18,20 @@ package main
 
 import (
 	"fmt"
-	log "github.com/Sirupsen/logrus"
-	"github.com/allegro/bigcache"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
 	"sync"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/allegro/bigcache"
 )
 
 const (
 	// Mirrors for ClamAV definitions. The standard mirror is slow as all get out.
 	secondaryMirror = "http://database.clamav.net"
-	primaryMirror   = "https://pivotal-clamav-mirror.s3.amazonaws.com"
+	primaryMirror   = "https://database.clamav.net"
 )
 
 // Downloader is the base structure for grabbing the necessary files.
